@@ -3,10 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Kattalyst プライバシーポリシー</title>
+  <script>
+    function getAppName() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("app") || "Kattalyst";
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const appName = getAppName();
+      // タイトルも動的に変更
+      document.title = appName + " プライバシーポリシー";
+
+      // 本文の置換
+      const appNameElements = document.querySelectorAll(".appName");
+      appNameElements.forEach(el => {
+        el.textContent = appName;
+      });
+    });
+  </script>
 </head>
 <body>
   <h1>プライバシーポリシー</h1>
-  <p>本アプリ「Kattalyst」は、ユーザーのプライバシーを尊重し、以下の方針に従って個人情報を取り扱います。</p>
+  <p>本アプリ「<span class="appName">Kattalyst</span>」は、ユーザーのプライバシーを尊重し、以下の方針に従って個人情報を取り扱います。</p>
 
   <h2>1. 収集する情報</h2>
   <ul>
