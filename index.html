@@ -3,219 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>プライバシーポリシー</title>
+  <title>プライバシーポリシー（移転しました）</title>
+  <link rel="canonical" href="https://kagen.github.io/tiritara-privacy/">
+  <!--
+    このページは既に公開済みのアプリが掲載している URL なので、消さずに残す。
+    ?app= を引き継いで新しい URL へ転送する。JavaScript が動かない環境でも
+    下の本文とリンクで移転先に辿り着けるようにしてある。
+  -->
+  <meta http-equiv="refresh" content="0; url=https://kagen.github.io/tiritara-privacy/">
+  <script>
+    // ?app= が付いていれば引き継ぐ。meta refresh より先に走らせる。
+    (function () {
+      var search = window.location.search || "";
+      window.location.replace("https://kagen.github.io/tiritara-privacy/" + search);
+    })();
+  </script>
   <style>
     body {
       font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
       line-height: 1.8;
-      max-width: 48rem;
+      max-width: 40rem;
       margin: 0 auto;
-      padding: 1.5rem 1.25rem 4rem;
+      padding: 3rem 1.25rem;
       color: #1a1a1a;
-      background: #fff;
     }
-    h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
-    h2 { font-size: 1.15rem; margin-top: 2.25rem; border-bottom: 1px solid #ddd; padding-bottom: 0.3rem; }
-    h3 { font-size: 1rem; margin-top: 1.5rem; }
-    .updated { color: #666; font-size: 0.9rem; margin-top: 0; }
-    table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
-    th, td { border: 1px solid #ddd; padding: 0.5rem 0.6rem; text-align: left; vertical-align: top; }
-    th { background: #f5f5f5; }
-    .no { color: #197a3d; font-weight: 600; }
-    .yes { color: #9a3412; font-weight: 600; }
-    .lang { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 2px solid #ddd; }
-    footer { margin-top: 3rem; color: #666; font-size: 0.9rem; }
-    code { background: #f5f5f5; padding: 0.1rem 0.3rem; border-radius: 3px; }
   </style>
-  <script>
-    // ?app=アプリ名 で見出しの表示名だけを差し替える。
-    // 収集内容そのものは下の表に静的に書いてあり、この処理には依存しない
-    // （JavaScript を実行しない閲覧者・審査ツールでも全文が読めるようにするため）。
-    window.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      const appName = params.get("app");
-      if (!appName) return;
-      document.title = appName + " プライバシーポリシー";
-      document.querySelectorAll(".appName").forEach((el) => {
-        el.textContent = appName;
-      });
-    });
-  </script>
 </head>
 <body>
-
-<h1>プライバシーポリシー</h1>
-<p class="updated">最終更新日: 2026年8月15日</p>
-
-<p>
-  開発者 tiritara（以下「当方」）が提供する<span class="appName">アプリ</span>について、
-  取り扱う情報とその目的を以下のとおり定めます。
-</p>
-
-<h2>1. アプリごとの収集内容</h2>
-
-<p>
-  取り扱う情報はアプリによって異なります。ご利用のアプリの行を参照してください。
-  表に無いアプリは「その他のアプリ」の行が適用されます。
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>アプリ</th>
-      <th>位置情報</th>
-      <th>広告ID</th>
-      <th>購入情報</th>
-      <th>クラッシュログ・利用統計</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TrainDetector<br>（乗り過ごし防止アラーム）</td>
-      <td class="yes">収集する<br>（端末内のみ・外部送信なし）</td>
-      <td class="no">収集しない</td>
-      <td>Google Play 経由</td>
-      <td class="no">収集しない</td>
-    </tr>
-    <tr>
-      <td>その他のアプリ</td>
-      <td class="no">収集しない</td>
-      <td>広告配信のために利用する場合があります</td>
-      <td>Google Play 経由</td>
-      <td>不具合対応のために取得する場合があります</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2>2. 位置情報の取り扱い（TrainDetector）</h2>
-
-<h3>取得するもの</h3>
-<p>
-  精密な位置情報を取得します。<strong>アプリを閉じている間や画面が消えている間も取得します。</strong>
-</p>
-
-<h3>目的</h3>
-<ul>
-  <li>乗車中の路線を推定して画面に表示するため</li>
-  <li>利用者が指定した範囲へ入ったことを検知し、到着アラームを鳴らすため</li>
-</ul>
-<p>
-  アラームは、アプリを閉じていても、画面が消えていても鳴る必要があります。
-  そのためアプリを使用していない間の位置情報が必要になります。
-  この目的以外に位置情報を利用することはありません。
-</p>
-
-<h3>保存と送信</h3>
-<ul>
-  <li>位置情報は<strong>お使いの端末内にのみ保存</strong>されます。</li>
-  <li>当方のサーバーへ位置情報を送信することはありません。当方のサーバーへ送るのは、
-      運行情報を取得するための<strong>路線の識別子のみ</strong>です。</li>
-  <li>設定で「詳細な走行ログを保存する」を有効にした場合、位置の記録が端末内に残ります。
-      これを外部へ渡すのは、利用者ご自身が書き出し操作を行い、共有先を選んだときだけです。
-      当方が自動的に受け取ることはありません。</li>
-  <li>アプリの削除により、端末内に保存された位置情報も削除されます。
-      アプリ内の設定からも削除できます。</li>
-</ul>
-
-<h2>3. 第三者サービス</h2>
-<ul>
-  <li><strong>Google Play 課金</strong> — 購入処理は Google が行います。当方はカード情報等を受け取りません。</li>
-  <li><strong>Google Play 開発者サービス（位置情報）</strong> — 位置の取得と範囲進入の判定に利用します。</li>
-  <li><strong>Google Maps</strong> — 地図の表示に利用します。地図の表示に伴い Google との通信が発生します。</li>
-</ul>
-<p>
-  これらのサービスにおける情報の取り扱いは、
-  <a href="https://policies.google.com/privacy">Google のプライバシーポリシー</a>に従います。
-</p>
-
-<h2>4. 児童の安全</h2>
-<p>
-  児童の性的虐待および搾取（CSAE）に対する方針は
-  <a href="child-safety.html">こちら</a>をご覧ください。
-</p>
-
-<h2>5. お問い合わせ</h2>
-<p>
-  ご不明点、および保存された情報の削除のご依頼は以下へご連絡ください。<br>
-  開発者メール: <a href="mailto:tiritara.dev@gmail.com">tiritara.dev@gmail.com</a>
-</p>
-
-<h2>6. 改定</h2>
-<p>
-  本ポリシーは必要に応じて更新されます。重要な変更がある場合は、本ページの最終更新日を改めます。
-</p>
-
-<div class="lang">
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 15 August 2026</p>
-
+  <h1>プライバシーポリシーは移転しました</h1>
   <p>
-    This policy covers the apps published by the developer tiritara. What is handled
-    differs per app; see the table below.
+    新しい URL:
+    <a href="https://kagen.github.io/tiritara-privacy/">https://kagen.github.io/tiritara-privacy/</a>
   </p>
+  <p>自動で移動しない場合は、上のリンクをお開きください。</p>
+  <p>お問い合わせ: <a href="mailto:tiritara.dev@gmail.com">tiritara.dev@gmail.com</a></p>
 
-  <h2>1. What each app collects</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>App</th>
-        <th>Location</th>
-        <th>Advertising ID</th>
-        <th>Purchases</th>
-        <th>Crash logs / analytics</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>TrainDetector</td>
-        <td class="yes">Collected<br>(kept on device, never sent)</td>
-        <td class="no">Not collected</td>
-        <td>Via Google Play</td>
-        <td class="no">Not collected</td>
-      </tr>
-      <tr>
-        <td>Other apps</td>
-        <td class="no">Not collected</td>
-        <td>May be used to serve ads</td>
-        <td>Via Google Play</td>
-        <td>May be collected to fix defects</td>
-      </tr>
-    </tbody>
-  </table>
+  <hr>
 
-  <h2>2. Location in TrainDetector</h2>
+  <h2>Privacy policy has moved</h2>
   <p>
-    The app collects precise location, <strong>including while the app is closed or the
-    screen is off</strong>. This is required because the whole purpose of the app is to
-    ring an alarm when you reach the area you chose, which must work while you are not
-    looking at your phone.
+    New URL:
+    <a href="https://kagen.github.io/tiritara-privacy/">https://kagen.github.io/tiritara-privacy/</a>
   </p>
-  <p>
-    Location is used only to estimate the line you are riding and to detect that you
-    entered an alarm area. It is <strong>stored on your device only</strong> and is never
-    sent to our servers; the only thing sent to our servers is the identifier of the
-    railway line whose service information is requested. If you enable detailed ride
-    logging, the recorded positions stay on the device and leave it only when you
-    explicitly export and choose where to send them. Uninstalling the app deletes this
-    data, and it can also be deleted from within the app's settings.
-  </p>
-
-  <h2>3. Third parties</h2>
-  <p>
-    Google Play (billing), Google Play services (location), and Google Maps (map display)
-    are used. Their handling of data follows the
-    <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
-  </p>
-
-  <h2>4. Contact</h2>
-  <p>
-    Questions and deletion requests: <a href="mailto:tiritara.dev@gmail.com">tiritara.dev@gmail.com</a>
-  </p>
-</div>
-
-<footer>
-  <p>© tiritara</p>
-</footer>
-
 </body>
 </html>
